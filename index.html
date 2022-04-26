@@ -24,7 +24,7 @@
         </header>
         <nav class="navbar">
 
-            <a href="#length">Calculator</a>
+            <a href="#tuning">Calculator</a>
             |
             <a href="#howto">How-To</a>
             |
@@ -34,11 +34,6 @@
         </nav>
     </div>
     <div class="main">
-        <form class="length-input" id="length" action="myFunction()">
-            <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
-                name="fname" value="12.0000" step=".0001">
-        </form>
-
         <form id="tuning" class="scale-input">
             <label class="label" for="scale">Scale or Chord:</label>
             <select class="dropdown input" name="scale" id="scale">
@@ -50,6 +45,12 @@
                 <option value="ukrainian dorian">ukrainian dorian</option>
             </select>
         </form>
+        <form class="length-input" id="length" action="myFunction()">
+            <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
+                name="fname" value="12.0000" step=".0001">
+        </form>
+
+
         <br>
         <button class="submit-button" onclick="getLengths()">Get Chime lengths</button>
         <div class="lengths">
@@ -57,18 +58,21 @@
         </div>
         <div id="howto" class="howto">
             <h1>How-To</h1>
-            <p class="small">How To:
-                1. Cut pipe to the lengths the calculator gives
-                2. Drill a hole 22.4% from the top where it will hang from (personally, I do this by ear without
-                measure, just hold the chime between your thumb and index and strike the chime. Adjust your finger
-                placement until the chime sounds the best.
-                3. String the chimes however you like. Here’s a cool way to do it https://youtu.be/_pBb20Gb3HY?t=96
-                4. You’ll something at the top to string them through (usually a round piece of wood)
-                5. Hang something from the center to strike the chimes (sounds best usually if it strikes the chimes in
-                their centers)
-                6. A lot of chimes have something hanging on the same string as the striker in the center to make the
-                striker move more
-                7. Decorate if you’d like!</p>
+            <ol class="small">
+                <li>Cut pipe to the lengths the calculator gives</li>
+                <li>Drill a hole 22.4% from the top where it will hang from (personally, I do this by ear without
+                    measure, just hold the chime between your thumb and index and strike the chime. Adjust your finger
+                    placement until the chime sounds the best.</li>
+                <li>String the chimes however you like. <a href="https://youtu.be/_pBb20Gb3HY?t=96">Here’s a cool way to do it</a>
+                </li>
+                <li>You’ll something at the top to string them through (usually a round piece of wood)</li>
+
+                <li>Hang something from the center to strike the chimes (sounds best usually if it strikes the chimes in
+                    their centers)</li>
+                <li>A lot of chimes have something hanging on the same string as the striker in the center to make the
+                    striker move more</li>
+                <li>Decorate if you’d like!</li>
+            </ol>
         </div>
         <div id="about" class="about">
             <h1>About</h1>
@@ -110,10 +114,18 @@
         </div>
     </div>
     <footer class="footer">
-        <img src="donate.gif" />
-        <img src="sst.gif" />
-        <img src="toot.gif" />
-        <script type="text/javascript" src="//counter.websiteout.net/js/24/0/0/0"></script>
+        <img class="banner" src="donate.gif" />
+        <img class="banner" src="sst.gif" />
+        <a href="https://tandy.bandcamp.com"><img class="banner" src="toot.gif" /></a>
+        <div class="hit-counter">
+            <p>Number of Visits</p>
+            <script type="text/javascript" src="//counter.websiteout.net/js/24/0/0/0"></script>
+        </div>
+
+        <div class="hit-counter">
+            <p>Unique Vistors</p>
+            <script type="text/javascript" src="//counter.websiteout.net/js/23/0/0/1"></script>
+        </div>
     </footer>
 
 
