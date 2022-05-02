@@ -34,21 +34,24 @@
         </nav>
     </div>
     <div class="main">
-        <form id="tuning" class="scale-input">
-            <label class="label" for="scale">Scale or Chord:</label>
-            <select class="dropdown input" name="scale" id="scale">
-                <option value="major pentatonic">major pentatonic</option>
-                <option value="minor pentatonic">minor pentatonic</option>
-                <option value="major scale">major scale</option>
-                <option value="harmonic minor scale">harmonic minor scale</option>
-                <option value="natural minor scale">natural minor scale</option>
-                <option value="ukrainian dorian">ukrainian dorian</option>
-            </select>
-        </form>
-        <form class="length-input" id="length" action="myFunction()">
-            <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
-                name="fname" value="12.0000" step=".0001">
-        </form>
+        <div class="calc-inputs">
+            <form id="tuning" class="scale-input">
+                <label class="label" for="scale">Scale or Chord:</label>
+                <select class="dropdown input" name="scale" id="scale">
+                    <option value="major pentatonic">major pentatonic</option>
+                    <option value="minor pentatonic">minor pentatonic</option>
+                    <option value="major scale">major scale</option>
+                    <option value="harmonic minor scale">harmonic minor scale</option>
+                    <option value="natural minor scale">natural minor scale</option>
+                    <option value="ukrainian dorian">ukrainian dorian</option>
+                </select>
+            </form>
+            <form class="length-input" id="length">
+                <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
+                    name="fname" value="12" step=".0001">
+            </form>
+        </div>
+
 
 
         <br>
@@ -63,7 +66,8 @@
                 <li>Drill a hole 22.4% from the top where it will hang from (personally, I do this by ear without
                     measure, just hold the chime between your thumb and index and strike the chime. Adjust your finger
                     placement until the chime sounds the best.</li>
-                <li>String the chimes however you like. <a href="https://youtu.be/_pBb20Gb3HY?t=96">Here’s a cool way to do it</a>
+                <li>String the chimes however you like. <a href="https://youtu.be/_pBb20Gb3HY?t=96">Here’s a cool way to
+                        do it</a>
                 </li>
                 <li>You’ll something at the top to string them through (usually a round piece of wood)</li>
 
@@ -90,7 +94,7 @@
                     Suits</a><br>
                 Many people find <a href="https://leehite.org/Chimes.htm">Lee Hite’s wind chime guide</a> useful </p>
         </div>
-       
+
     </div>
     <footer class="footer">
         <img class="banner" src="donate.gif" />
@@ -102,13 +106,23 @@
         </div>
     </footer>
 
+    <script>
+        var lengthInput = document.getElementById("length");
+        lengthInput.addEventListener("keydown", function (e) {
+
+            if (e.code === "Enter") { //checks whether the pressed key is "Enter"
+                e.preventDefault();
+                getLengths();
+            }
+        });
+    </script>
 
     <script>
         function getLengths() {
             const scales = {
                 "ukrainian dorian": ["1", "2", "b3", "#4", "5", "6", "b7", "8"],
                 "major scale": ["1", "2", "3", "4", "5", "6", "7", "8"],
-                "major chord": ["1","3","5","8"],
+                "major chord": ["1", "3", "5", "8"],
                 "minor chord": ["1,b3,5,8"],
                 "natural minor scale": ["1", "2", "b3", "4", "5", "b6", "b7", "8"],
                 "harmonic minor scale": ["1", "2", "b3", "4", "5", "b6", "7", "8"],
@@ -118,7 +132,11 @@
             }
             const length = Number(document.getElementById("length").elements[0].value);;
             const tuning = scales[document.getElementById("tuning").elements[0].value];
-            var text = "";
+            var text = `<table>
+                            <tr>
+                                <th>Scale Degree</th>
+                                <th>Length</th>
+                            </tr>`;
             const proportions = {
                 "1": 1,
                 "#1": .9798,
@@ -141,8 +159,10 @@
             }
 
             for (let i = 0; i < tuning.length; i++) {
-                text += tuning[i] + ": " + String((length * proportions[tuning[i]]).toFixed(4)) + "<br>";
+                text +=
+                `<tr><td>${tuning[i]}</td><td>${String((length * proportions[tuning[i]]).toFixed(4))}</td></tr>`;
             }
+            text += "</table>"
             document.getElementById("demo").innerHTML = text;
         }
     </script>
