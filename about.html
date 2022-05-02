@@ -33,30 +33,27 @@
             <a href="./feedback.html">Feedback</a>
         </nav>
     </div>
-    <main class="main calculator">
-        <div class="calc-inputs">
-            <form id="tuning" class="scale-input">
-                <label class="label" for="scale">Scale or Chord:</label>
-                <select class="dropdown input" name="scale" id="scale">
-                    <option value="major pentatonic">major pentatonic</option>
-                    <option value="minor pentatonic">minor pentatonic</option>
-                    <option value="major scale">major scale</option>
-                    <option value="harmonic minor scale">harmonic minor scale</option>
-                    <option value="natural minor scale">natural minor scale</option>
-                    <option value="ukrainian dorian">ukrainian dorian</option>
-                </select>
-            </form>
-            <form class="length-input" id="length">
-                <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
-                    name="fname" value="12" step=".0001">
-            </form>
-        </div>
+    <main class="main">
+        
 
-        <br>
-        <button class="submit-button" onclick="getLengths()">Get Chime lengths</button>
-        <div class="lengths">
-            <p id="demo"></p>
-        </div>
+
+        <div id="about" class="about">
+            <h1>About</h1>
+            <p class="small">
+                This wind chime calculator will give you the lengths to cut pipes to get the desired notes.<br><br>
+
+                I wanted to keep the calculator simple for now, so there are many features which might be useful that
+                are not included, like different diameters and materials, cost, specific notes or frequencies.<br><br>
+
+                Right now all you do is input the length of your lowest note (longest chime) and what scale or chord
+                your want (starting with that lowest note). I am a musician and wanted to make a more musically oriented
+                tool, so you will find many options for scale and chord.
+                <br><br>
+                The math behind this calculator is from <a href="https://pages.mtu.edu/~suits/windchime.html ">Bryan H.
+                    Suits</a><br>
+                Many people find <a href="https://leehite.org/Chimes.htm">Lee Hite’s wind chime guide</a> useful </p>
+                </div>
+
     </main>
     <footer class="footer">
         <img class="banner" src="donate.gif" />

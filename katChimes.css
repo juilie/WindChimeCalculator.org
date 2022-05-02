@@ -3,7 +3,7 @@ body {
     background-size: 200px;
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: xx-large;
-    animation: scrolling 30s linear infinite;
+    animation: scrolling 35s linear infinite;
 }
 
 @keyframes scrolling {
@@ -12,7 +12,7 @@ body {
     }
   
     to {
-      background-position: 0 199px;
+      background-position: 0px 194px;
     }
   }
 
@@ -78,21 +78,25 @@ body {
     padding-top: 15px;
 }
 
-.main {
+main.calculator {
     display: grid;
-    grid-template-columns: 50% 50% 100% 100% 100%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 30% 70%;
     gap: 10px 10px;
     grid-template-areas:
-        "inputs button howto about feedback"
-        "calculation calculation howto about feedback";
+        "inputs calculation"
+        "button calculation";
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+main {
     background-image: url("papyrus.jpg");
     min-height: 600px;
     margin: 15px auto;
     width: 90vw;
     border-radius: 10px;
-    overflow: hidden;
-    overflow-y: scroll;
 }
 
 .about {
@@ -117,7 +121,8 @@ body {
     display: flex;
     grid-area: calculation;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 5%;
 }
 
 .scale-input {
@@ -132,7 +137,7 @@ body {
 .submit-button {
     height: fit-content;
     grid-area: button;
-    align-self: center;
+    align-self: flex-start;
     width: fit-content;
     justify-self: center;
 }
@@ -166,7 +171,7 @@ a:visited {
 }
 
 @media (min-width: 1040px) {
-    .main {
+    main {
         width: 80vw;
     }
 
@@ -253,7 +258,7 @@ td,
 th {
     border: 1px solid #d28d44;
     background-color: #fee1a385;
-    padding: 4px 8px;
+    padding: 8px;
 }
 
 table {
@@ -266,14 +271,9 @@ th {
     font-size: 20pt;
 }
 
-td:nth-child(1) {
-    text-align: center;
-}
-
 .calc-inputs {
     background-color: #f9d788;
     padding: 20px;
-    /* margin: 20px; */
     box-shadow: 10px 10px 10px;
     height: fit-content;
     width: fit-content;
@@ -281,4 +281,13 @@ td:nth-child(1) {
     align-self: center;
     justify-self: center;
     justify-content: start;
+}
+
+#message {
+    height: 200px; 
+    width: 100%;
+}
+
+.submit-button {
+    font-size: 20pt;
 }
