@@ -1,9 +1,34 @@
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  }
+
 body {
     background-image: url("sky.jpg");
     background-size: 200px;
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: xx-large;
     animation: scrolling 35s linear infinite;
+}
+
+.site-title {
+    font-size: larger;
+    /* font-weight: bold; */
+    border: 5px ridge rgb(255, 0, 85);
+    background-color: #ff88eb59;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0;
+}
+
+#tandyWebring {
+    font-size: 14pt;
+}
+
+h1 {
+    margin: 0;
 }
 
 @keyframes scrolling {
