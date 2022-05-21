@@ -1,15 +1,28 @@
 body {
-    background-image: url("bowl.png");
+    background-image: url("sky.jpg");
+    background-size: 200px;
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: xx-large;
+    animation: scrolling 35s linear infinite;
 }
+
+@keyframes scrolling {
+    from {
+      background-position: 0 0;
+    }
+  
+    to {
+      background-position: 0px 194px;
+    }
+  }
 
 .banner {
     width: 88px;
     height: 31px;
     transition: all .1s linear;
 }
-.banner:hover{
+
+.banner:hover {
     transform: scale(1.2);
     transition: all .1s linear;
 }
@@ -28,7 +41,7 @@ body {
 }
 
 .small {
-    font-size:large;
+    font-size: large;
     text-align: left;
     padding: 20px 10%;
     margin: 0 40px;
@@ -65,21 +78,25 @@ body {
     padding-top: 15px;
 }
 
-.main {
+main.calculator {
     display: grid;
-    grid-template-columns: 50% 50% 100% 100% 100%;
-    grid-template-rows: 10% 10% 80%;
-    gap: 10px 10px 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 70%;
+    gap: 10px 10px;
     grid-template-areas:
-        "scale button howto about feedback"
-        "length button howto about feedback"
-        "calculation calculation howto about feedback";
+        "inputs calculation"
+        "button calculation";
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+main {
     background-image: url("papyrus.jpg");
     min-height: 600px;
     margin: 15px auto;
     width: 90vw;
     border-radius: 10px;
-    overflow: hidden;
 }
 
 .about {
@@ -104,22 +121,23 @@ body {
     display: flex;
     grid-area: calculation;
     justify-content: center;
+    align-items: flex-start;
+    margin-top: 5%;
 }
 
 .scale-input {
-    grid-area: scale;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 .length-input {
-    grid-area: length;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .submit-button {
     height: fit-content;
     grid-area: button;
-    align-self: center;
+    align-self: flex-start;
     width: fit-content;
     justify-self: center;
 }
@@ -153,7 +171,7 @@ a:visited {
 }
 
 @media (min-width: 1040px) {
-    .main {
+    main {
         width: 80vw;
     }
 
@@ -233,5 +251,43 @@ button {
     display: flex;
     flex-wrap: wrap;
     width: 20%;
-justify-content: center;
+    justify-content: center;
+}
+
+td,
+th {
+    border: 1px solid #d28d44;
+    background-color: #fee1a385;
+    padding: 8px;
+}
+
+table {
+    border-spacing: 4px;
+    background-color: #f9d788a6;
+    box-shadow: 10px 10px 10px;
+}
+
+th {
+    font-size: 20pt;
+}
+
+.calc-inputs {
+    background-color: #f9d788;
+    padding: 20px;
+    box-shadow: 10px 10px 10px;
+    height: fit-content;
+    width: fit-content;
+    grid-area: inputs;
+    align-self: center;
+    justify-self: center;
+    justify-content: start;
+}
+
+#message {
+    height: 200px; 
+    width: 100%;
+}
+
+.submit-button {
+    font-size: 20pt;
 }

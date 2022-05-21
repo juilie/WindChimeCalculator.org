@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -33,29 +34,25 @@
             <a href="./feedback.html">Feedback</a>
         </nav>
     </div>
-    <main class="main calculator">
-        <div class="calc-inputs">
-            <form id="tuning" class="scale-input">
-                <label class="label" for="scale">Scale or Chord:</label>
-                <select class="dropdown input" name="scale" id="scale">
-                    <option value="major pentatonic">major pentatonic</option>
-                    <option value="minor pentatonic">minor pentatonic</option>
-                    <option value="major scale">major scale</option>
-                    <option value="harmonic minor scale">harmonic minor scale</option>
-                    <option value="natural minor scale">natural minor scale</option>
-                    <option value="ukrainian dorian">ukrainian dorian</option>
-                </select>
-            </form>
-            <form class="length-input" id="length">
-                <label class="label">Longest Chime Length: </label><input class="input length-input" type="number"
-                    name="fname" value="12" step=".0001">
-            </form>
-        </div>
-
-        <br>
-        <button class="submit-button" onclick="getLengths()">Get Chime lengths</button>
-        <div class="lengths">
-            <p id="demo"></p>
+    <main class="main">
+        <div id="howto" class="howto">
+            <h1>How-To</h1>
+            <ol class="small">
+                <li>Cut pipe to the lengths the calculator gives</li>
+                <li>Drill a hole 22.4% from the top where it will hang from (personally, I do this by ear without
+                    measure, just hold the chime between your thumb and index and strike the chime. Adjust your finger
+                    placement until the chime sounds the best.</li>
+                <li>String the chimes however you like. <a href="https://youtu.be/_pBb20Gb3HY?t=96">Here’s a cool way to
+                        do it</a>
+                </li>
+                <li>You’ll something at the top to string them through (usually a round piece of wood)</li>
+        
+                <li>Hang something from the center to strike the chimes (sounds best usually if it strikes the chimes in
+                    their centers)</li>
+                <li>A lot of chimes have something hanging on the same string as the striker in the center to make the
+                    striker move more</li>
+                <li>Decorate if you’d like!</li>
+            </ol>
         </div>
     </main>
     <footer class="footer">

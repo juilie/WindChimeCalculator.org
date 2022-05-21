@@ -1,7 +1,23 @@
 body {
-    background-image: url("bowl.png");
+    background-image: url("./sky.jpg");
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: large;
+    animation: scrolling 35s linear infinite;
+}
+
+@keyframes scrolling {
+    from {
+      background-position: 0 0;
+    }
+  
+    to {
+      background-position: 0px 194px;
+    }
+  }
+
+h1 {
+    font-size: xx-large;
+    font-weight: normal;
 }
 
 .banner {
@@ -25,6 +41,7 @@ body {
     padding: 2px 5px;
     border-radius: 5px;
     color: black;
+    width: fit-content;
 }
 
 .small {
@@ -186,7 +203,7 @@ button {
     background-color: pink;
 }
 
-.footer {
+footer {
     width: 80vw;
     border-radius: 10px;
     margin: 0 auto;
