@@ -3,7 +3,7 @@ html{
     width: 100%;
 }
 body {
-    background-image: url("sky.jpg");
+    background-image: url("./assets/sky.jpg");
     background-size: 200px;
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: xx-large;
@@ -45,7 +45,7 @@ body {
 }
 
 .header {
-    background-image: url("papyrus.jpg");
+    background-image: url("./assets/papyrus.jpg");
     width: 90vw;
     justify-content: space-evenly;
     margin: 10px auto;

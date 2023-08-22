@@ -6,7 +6,7 @@
   }
 
 body {
-    background-image: url("sky.jpg");
+    background-image: url("./assets/sky.jpg");
     background-size: 200px;
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: xx-large;
@@ -59,7 +59,7 @@ h1 {
     gap: 10px;
     align-items: center;
     background-color: rgba(240, 248, 255);
-    background-image: url("./papyrus.jpg");
+    background-image: url("./assets/papyrus.jpg");
     padding: 2px 5px;
     border-radius: 5px;
     color: black;
@@ -117,7 +117,7 @@ main.calculator {
 }
 
 main {
-    background-image: url("papyrus.jpg");
+    background-image: url("./assets/papyrus.jpg");
     min-height: 600px;
     margin: 15px auto;
     width: 90vw;
@@ -187,7 +187,7 @@ a:visited {
 }
 
 .header {
-    background-image: url("papyrus.jpg");
+    background-image: url("./assets/papyrus.jpg");
     width: 90vw;
     justify-content: space-evenly;
     margin: 10px auto;
@@ -262,7 +262,6 @@ button {
 }
 
 .footer {
-    /* background: url("./papyrus.jpg"); */
     width: 80vw;
     border-radius: 10px;
     margin: 0 auto;
