@@ -10,13 +10,7 @@ function getLengths() {
         "minor pentatonic": ["1", "b3", "4", "5", "b7", "8"],
         "chromatic": ["1", "b2", "2", "b3", "3", "4", "#4", "5", "b6", "6", "b7", "7", "8"]
     }
-    const length = Number(document.getElementById("length").elements[0].value);;
-    const tuning = scales[document.getElementById("tuning").elements[0].value];
-    var text = `<table>
-                    <tr>
-                        <th>Interval</th>
-                        <th>Length</th>
-                    </tr>`;
+
     const proportions = {
         "1": {
             proportion: 1,
@@ -87,6 +81,16 @@ function getLengths() {
             interval: "Octave"
         }
     }
+
+    const length = Number(document.getElementById("length").elements[0].value);
+    const tuning = scales[document.getElementById("tuning").elements[0].value];
+
+    var text = `<table>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Length</th>
+                    </tr>`;
+
 
     for (let i = 0; i < tuning.length; i++) {
         text +=
